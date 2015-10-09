@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+}
+
+.table {
+  margin: 0 auto;
+  width: 450px;
+  height: 450px;
+  border: 1px solid;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border: 1px solid white; 
+}
