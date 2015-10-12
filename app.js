@@ -23,6 +23,11 @@ $(function(){
   console.log("hi");
 
   var gamePlaying = false;
+  var holes = $(".mole");
+  var delay = 1000;
+  var count = 0;
+  var scoreBoard = $('li').click(function() { count++;
+                    $("#score").html("Whack count is: "+count); })
 
 
   //fade out buttons when play is clicked.
@@ -33,11 +38,10 @@ $(function(){
     }) 
   })   
 
-  var holes = $(".mole");
-  var delay = 1000;
+  
   // var random = Math.floor((Math.random()*holes.length)+1);      
 
-  // Make random mole visible   
+  // Make random mole visible when 'whack' is clicked. Game length set to 1 minute
   $('#play').on("click", function(){
     gamePlaying = true;
     setTimeout(function() {
@@ -49,11 +53,13 @@ $(function(){
 
   //when mole is clicked on it dissapears.
   $('li').on("click", function() {
-    $(this).fadeOut(10); 
-    
+  scoreBoard;  
+  $(this).fadeOut(10); 
+  console.log("clicked")
   })
 
-  //mole then reappears randomly.    
+
+//mole then reappears randomly.    
   var fadeInRandom = function() {
     console.log("fadeInRandom", gamePlaying);
     var random = Math.floor(Math.random()*(holes.length-1));

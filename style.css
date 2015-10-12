@@ -7,9 +7,23 @@ body {
 
 }
 
+.boxed {
+  margin: 0 auto;
+  width: 100px;
+  border: 1px solid black;
+  text-align: center;
+
+}
+
 .grid {
   margin: 0 auto;
   text-align: center;
+}
+
+#result div {
+  width: 100px;
+  border: 5px solid navy;
+
 }
 
 ul {
