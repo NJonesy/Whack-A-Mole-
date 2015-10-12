@@ -20,5 +20,39 @@
 // whack animation.
 
 $(function(){
+  console.log("hi");
 
+
+//fade out buttons when play is clicked.
+$('#new_game').on("click", function(){
+  $('li').each(function(i){
+    $(this).fadeOut();
+    console.log("hello")
+  }) 
+})   
+    
+    var holes = $(".mole");
+    var random = Math.floor((Math.random()*holes.length)+1);      
+
+ // Make random mole visible   
+$('#play').on("click", function(){
+$(holes[random]).fadeIn();
+  console.log("howdy")
+  }) 
+
+//when mole is clicked on it dissapears.
+  $('li').on("click", function() {
+    $(this).fadeOut(), fadeRandom();
+  })
+    
+//mole then reappears randomly.    
+  function fadeRandom() {
+    var random = Math.floor((Math.random()*holes.length)+1);
+    $(holes[random]).fadeIn();
+    console.log(random)
+    console.log(holes[random])
+    console.log("holla!")
+  
 }
+
+})

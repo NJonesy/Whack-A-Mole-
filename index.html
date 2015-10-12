@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script type="text/javascript" src="./jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+
   <title>Whack A Mole!</title>
 </head>
 
 <body>
 
-<h1>Whack A Mole!</h1>
+  <h1>Whack A Mole!</h1>
 
-<table class="table">
-<tr>
-  <td id="mole_one" class="button"></td>
-  <td id="mole_two" class="button"></td>
-  <td id="mole_three" class="button"></td>
-</tr>
-<tr>
-  <td id="mole_four" class="button"></td>
-  <td id="mole_five" class="button"></td>
-  <td id="mole_six" class="button"></td>
-</tr>
-<tr>
-  <td id="mole_seven" class="button"></td>
-  <td id="mole_eight" class="button"></td>
-  <td id="mole_nine" class="button"></td>
-</tr>
-</table>
+  <button id="new_game">New Game</button>
+  <button id="play">Whack!</button>
 
-<input type="submit" id="Play Game">
+  <div class="grid">
+    <ul class="rowOne">
+      <li id="mole_one" type="button" class="mole"></li>
+      <li id="mole_two" type="button" class="mole"></li>
+      <li id="mole_three" type="button" class="mole"></li>
+    </ul>
+
+    <ul class="rowTwo">
+      <li id="mole_four" type="button" class="mole"></li>
+      <li id="mole_five" type="button" class="mole"></li>
+      <li id="mole_six" type="button" class="mole"></li>
+    </ul>
+
+    <ul class="rowThree">
+      <li id="mole_seven" type="button" class="mole"></li>
+      <li id="mole_eight" type="button" class="mole"></li>
+      <li id="mole_nine" type="button" class="mole"></li>
+    </ul>
+  </div>
 
 </body>
 </html>
+
+
+
+<!-- <table class="table">
+<tr>
+  <td id="mole_one" type="button" class="mole"></td>
+  <td id="mole_two" type="button" class="mole"></td>
+  <td id="mole_three" type="button" class="mole"></td>
+</tr>
+<tr>
+  <td id="mole_four" type="button" class="mole"></td>
+  <td id="mole_five" type="button" class="mole"></td>
+  <td id="mole_six" type="button" class="mole"></td>
+</tr>
+<tr>
+  <td id="mole_seven" type="button" class="mole"></td>
+  <td id="mole_eight" type="button" class="mole"></td>
+  <td id="mole_nine" type="button" class="mole"></td>
+</tr>
+</table>
+
+<button id="new_game">New Game</button>
+<button id="play">Whack!</button> -->
+
+
+
+
+
