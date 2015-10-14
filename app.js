@@ -20,50 +20,57 @@
 // whack animation.
 
 $(function(){
-  console.log("hi");
+ 
+//Variable allowing control over whether the game is running or not.
+var gamePlaying = false  
+//variable getting elements with the class name "mole" (each button). Enables control over them, used for randomising. 
+var holes = $(".mole");
+//varable setting the maximum delay for fading the moles in an out, which can be manipulated.  
+var delay = 1000;
+//start setting for the score board.  
+var count = 0;
+//Score increasing by one, defined as a variable so that I could add it to the mole click function.
+//Could have made it function scoreboard() and called it later.   
+var scoreBoard = $('li').click(function() { count++;
+  $("#score").html("Whack count is: "+count); })
 
-  var gamePlaying = false;
-  var holes = $(".mole");
-  var delay = 1000;
-  var count = 0;
-  var scoreBoard = $('li').click(function() { count++;
-                    $("#score").html("Whack count is: "+count); })
+var sound = new Audio ("pistol_gun_shot.mp3");
 
 
-  //fade out buttons when play is clicked.
-  $('#new_game').on("click", function(){
+   //fade out buttons when play is clicked.
+   $('#new_game').on("click", function(){
     $('li').each(function(i){
       $(this).fadeOut();
-      console.log("hello")
     }) 
   })   
 
-  
-  // var random = Math.floor((Math.random()*holes.length)+1);      
 
-  // Make random mole visible when 'whack' is clicked. Game length set to 1 minute
+  // Makes random mole visible when 'whack' is clicked. Game length set to 1 minute
   $('#play').on("click", function(){
     gamePlaying = true;
     setTimeout(function() {
-      console.log("GAME ENDED");
       gamePlaying = false;
     }, 60000)
     fadeInRandom();
   }) 
 
-  //when mole is clicked on it dissapears.
+  //when mole is clicked on it dissapears. Scoreboard function kicks in. ClickSound function called.
   $('li').on("click", function() {
-  scoreBoard;  
-  $(this).fadeOut(10); 
-  console.log("clicked")
+    scoreBoard;  
+    clickSound();
+    $(this).fadeOut(10); 
   })
 
+  //Click sound.
+  function clickSound(){
+    $('li').click(function(){ 
+      sound.play();   
+    })
+  } 
 
-//mole then reappears randomly.    
+  //Random mole appearance function. Mole then fades out with the delay time decreasing.   
   var fadeInRandom = function() {
-    console.log("fadeInRandom", gamePlaying);
     var random = Math.floor(Math.random()*(holes.length-1));
-    console.log(holes[random]);
     $(holes[random]).fadeIn(delay, function(){
       $(this).fadeOut(100);
       delay = delay - 5;
@@ -76,6 +83,21 @@ $(function(){
 
   };
 });
+
+// $('new_game').on("click", function() { window.location.reload() })
+// console.log("new game");    
+// clearBoard();
+
+// function clearBoard() {
+
+//   $('li').each(function(i){
+//     $(this).fadeOut();
+//     console.log("hello")
+//   })
+//   } 
+
+
+
 
 // var gamePlaying = true;
 
