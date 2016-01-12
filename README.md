@@ -59,4 +59,6 @@ Challenges/What I would have done differently/What I learned:
 
     - More comfortable with JQuery logic and syntax. Generally think I can now see what needs to be implemeneted and feel more confident in how to implement. 
 
+    - changing characters and sounds.
+
 
